@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .models import Department, Designation, Employee
 from .serializers import DepartmentSerializer, DesignationSerializer, EmployeeSerializer
-from .permissions import IsHumanResourceAdmin
+
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
@@ -13,5 +13,8 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     
     
     def get_queryset(self):
+        if self.request.user.employee.designation.name == "Human Resource":
+            return self.queryset
+    
         return self.queryset.filter(user=self.request.user)
     

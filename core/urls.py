@@ -7,4 +7,5 @@ urlpatterns = [
     path(f"{version}", include('employees.urls')),
     path(f"{version}/attendance/", include('attendance.urls')),
     path(f"{version}", include('leave_management.urls')),
+    path(f"{version}", include('payroll.urls')),
 ]

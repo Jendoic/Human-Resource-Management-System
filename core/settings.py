@@ -33,6 +33,8 @@ LOCAL_APPS = [
     'employees',
     'attendance',
     'leave_management',
+    'payroll',
+    'performance'
 ]
 
 THIRD_PARTY_APPS = [
