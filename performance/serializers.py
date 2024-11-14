@@ -16,7 +16,7 @@ class PerformanceGoalSerializer(serializers.ModelSerializer):
         
 class ReviewCommentSerializer(serializers.ModelSerializer):
     employee = serializers.PrimaryKeyRelatedField(queryset=Employee.objects.all())
-    review_by = serializers.PrimaryKeyRelatedField(queryset=)
+    review_by = serializers.PrimaryKeyRelatedField()
     class Meta:
         model = ReviewComment
         fields = '__all__'

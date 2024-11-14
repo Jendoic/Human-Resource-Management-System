@@ -63,7 +63,7 @@ class SalaryViewSet(viewsets.ModelViewSet):
     queryset = Salary.objects.all()
     serializer_class = SalarySerializer
     
-    print(Salary.objects.filter(id=5))
+    # print(Salary.objects.filter(id=5))
    
     def get_queryset(self):
         if self.request.user.employee.designation.name == "Human Resource":
